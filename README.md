@@ -23,3 +23,48 @@ This library will be used to hash the password and then store it to database.Thi
 
 6. **mongoose**
 Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+###  Initiate Project
+
+We will start by creating a node project. So, Create a new folder with the name 'node-auth' and follow the steps below. All the project files should be inside the 'node-auth' folder. 
+
+
+```
+npm init
+
+```
+
+***npm init*** will ask you some basic information about project. Now, you have created the node project, it's time to install the required packages. So, go ahead and install the packages by running the below command.
+
+```javascript
+npm install express express-validator body-parser bcryptjs jsonwebtoken mongoose --save
+```
+
+Now, create a file ***index.js*** and add this code. 
+
+```javascript
+// File : index.js
+
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+
+// PORT
+const PORT = process.env.PORT || 4000;
+
+app.get("/", (req, res) => {
+  res.json({ message: "API Working" });
+});
+
+
+app.listen(PORT, (req, res) => {
+  console.log(`Server Started at PORT ${PORT}`);
+});
+
+```
+
+If you type `node index.js` in the terminal, the server will start at PORT 4000. 
+
+> You have successfully set up your NodeJS app application. It's time to set up the database to add more functionality. 
+
+----
